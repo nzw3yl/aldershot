@@ -1,25 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Demo4" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Demo4" %>">
-    <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= content_for?(:title) ? yield(:title) : "Aldershot" %></title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
-    <%= yield(:head) %>
   </head>
-  <body class="<%= controller_name %> <%= action_name %>">
-    <div id="container" class="container">
-      <header>
-        <%= render 'layouts/navigation' %>
-        <%= render 'layouts/messages' %>
-      </header>
-      <div id="main" role="main">
-        <%= yield %>
-      </div>
-      <footer>
-      </footer>
-    </div> <!--! end of #container -->
+
+  <body>
+    <div class="off-canvas-wrap">
+	  <div class="inner-wrap">
+		<nav class="tab-bar has-form has-dropdown" data-topbar> 
+		  <section class="left-small">
+		    <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+		  </section>
+		  <section class="middle tab-bar-section">
+		   <%= render 'layouts/navigation' %>
+		  </section>
+		  <section class="right-small">
+		    <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
+		  </section>
+		</nav> 
+		<aside class="left-off-canvas-menu"> 
+          <%= render 'layouts/left_canvas' %>
+		</aside> 
+		<aside class="right-off-canvas-menu"> 
+          <%= render 'layouts/right_canvas' %>
+		</aside> 
+		<section class="main-section">
+		  <div class="row">
+            <div class="small-11 small-centered columns">
+	          &nbsp;
+	        </div> 
+			<div class="small-11 small-centered columns"><%= yield %></div> 
+	      </div>
+		</section> 
+		  <a class="exit-off-canvas"></a> 
+	  </div>
+	</div>
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

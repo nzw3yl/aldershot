@@ -38,5 +38,8 @@ Demo4::Application.configure do
   }
   # Send email in development mode.
   config.action_mailer.perform_deliveries = true
+  
+  #set default URL options
+  config.action_mailer.default_url_options = { :host => 'localhost'}
 
 end

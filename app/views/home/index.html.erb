@@ -1,4 +1,77 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+<form>
+  <div class="row">
+	<div class="row collapse">
+	        <div class="small-8 small-offset-1 columns">
+	          <input type="text" placeholder="Search Keywords">
+	        </div>
+	        <div class="small-2 columns">
+	          <a href="#" class="button postfix"><i class="fi-magnifying-glass style3"></i></a>
+	        </div>
+	        <div class="small-1 columns">
+	        </div>
+	      </div>
+  </div>
+</form>
+<dl class="accordion" data-accordion> 
+  <dd> 
+    <a href="#panel1"><img class="radius profile"src="images/default_profile.jpg">
+	  <span class="update-text">
+		<div class="row">
+		  <div class="small-10 columns">
+		  <i class="fi-x"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+		  </div>
+		  <div class="small-1 columns">
+			1hr
+		  </div>
+		</div>
+	  </span>
+	</a> 
+	<div id="panel1" class="content"> 
+	  <div class="row">
+		<div class="small-2 columns">
+		  <img class="radius profile"src="images/default_profile.jpg">
+		</div>
+		<div class="small-10 columns">
+      		<form>
+			    <div class="row">
+			      <div class="small-12 columns">
+				    <input type="text" placeholder="Comment to John Q" size="66" />
+			      </div>
+			    </div>
+			  </form>
+	    </div>
+	  </div>
+	  <div class="row">
+		<div class="small-2 columns">
+		  <img class="radius profile"src="images/default_profile.jpg">
+		</div>
+		<div class="small-10 columns">
+          <span>the latest comment</span>
+	    </div>
+	  </div>
+	  <div class="row">
+		<div class="small-2 columns">
+		  <img class="radius profile"src="images/default_profile.jpg">
+		</div>
+		<div class="small-10 columns">
+          <span>the 2nd latest comment</span>
+	    </div>
+	  </div>
+	</div>
+  </dd> 
+  <dd> 
+	<a href="#panel2">
+	   <img class="radius profile"src="images/default_profile.jpg">
+	       <span class="update-text"><i class="fi-trophy"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
+	</a>
+	<div id="panel2" class="content"> Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+	</div>
+  </dd> 
+  <dd> 
+	<a href="#panel3"><img class="radius profile"src="images/default_profile.jpg">
+		<span class="update-text"> <i class="fi-info"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
+	</a>
+    <div id="panel3" class="content"> Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	</div>
+  </dd> 
+</dl>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Demo4" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Demo4" %>">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <div id="container" class="container">
+      <header>
+        <%= render 'layouts/navigation' %>
+        <%= render 'layouts/messages' %>
+      </header>
+      <div id="main" role="main">
+	   <div class="row">
+		<div class="large-12 columns">&nbsp;</div>
+	   </div>
+	   <div class="row">
+		<%= render 'layouts/mobile'%>
+		<div class="large-4 columns">
+		    <input type="search" placeholder="Search...@,#">
+		    <div class="section-container accordion" data-section="accordion">
+			  <section>
+			    <h6 class="title" data-section-title>
+                  <a href="#"><img class="th radius profile profeed"src="images/default_profile.jpg"> 
+				    <div class="small-9 columns">
+					  <div class="row">
+					    <span class="small-10 columns feed">Section 1</span>
+					    <span class="small-1 columns right feed"> 3d </span>
+					  </div>
+					</div>
+					<div class="small-9 columns">
+					  <div class="row">
+					    <span class="small-12 columns feed">content and more and more content more and more and more</span>
+					  </div>
+					</div>
+				    <span class="small-12 columns">link1 link2 link3</span>
+				  </a>
+				</h6>		
+			    <div class="content" data-section-content>
+			      <p>Content of section 1.</p>
+			    </div>
+			  </section>
+			  <section>
+			    <p class="title" data-section-title><a href="#"><img class="th radius" width="50" height="50"src="images/default_profile.jpg"> Section 2</a></p>
+			    <div class="content" data-section-content>
+			      <p>Content of section 2.</p>
+			    </div>
+			  </section>
+			  <section>
+			    <p class="title" data-section-title><a href="#"><img class="th radius" width="50" height="50"src="images/default_profile.jpg"> Section 3</a></p>
+			    <div class="content" data-section-content>
+			      <p>Content of section 1.</p>
+			    </div>
+			  </section>
+			  <section>
+			    <p class="title" data-section-title><a href="#"><img class="th radius" width="50" height="50"src="images/default_profile.jpg"> Section 4</a></p>
+			    <div class="content" data-section-content>
+			      <p>Content of section 2.</p>
+			    </div>
+			  </section>
+			  <section>
+			    <p class="title" data-section-title><a href="#"><img class="th radius" width="50" height="50"src="images/default_profile.jpg"> Section 5</a></p>
+			    <div class="content" data-section-content>
+			      <p>Content of section 1.</p>
+			    </div>
+			  </section>
+			  <section>
+			    <p class="title" data-section-title><a href="#"><img class="th radius" width="50" height="50"src="images/default_profile.jpg"> Section 6</a></p>
+			    <div class="content" data-section-content>
+			      <p>Content of section 2.</p>
+			    </div>
+			  </section>
+			  <section>
+			    <p class="title" data-section-title><a href="#"><img class="th radius" width="50" height="50"src="images/default_profile.jpg"> Section 7</a></p>
+			    <div class="content" data-section-content>
+			      <p>Content of section 1.</p>
+			    </div>
+			  </section>
+			  <section>
+			    <p class="title" data-section-title><a href="#"><img class="th radius" width="50" height="50"src="images/default_profile.jpg"> Section 8</a></p>
+			    <div class="content" data-section-content>
+			      <p>Content of section 2.</p>
+			    </div>
+			  </section>
+			</div>
+		</div>
+		<div class="large-4 columns">...</div>
+       </div> <!--! end of #row -->
+      </div>
+      <footer>
+      </footer>
+    </div> <!--! end of #container -->
+  </body>
+</html>

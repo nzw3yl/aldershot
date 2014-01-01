@@ -15,7 +15,10 @@ gem 'figaro'
 gem 'pg'
 gem 'rolify'
 gem 'simple_form', '>= 3.0.0.rc'
-gem 'zurb-foundation'
+#gem 'zurb-foundation'
+gem 'foundation-rails'
+#gem 'foundation_icons_rails'
+gem 'foundation-icons-sass-rails'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]

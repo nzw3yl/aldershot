@@ -8,12 +8,12 @@
 // compiled file.
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
+// about supported directives. note: Add this back in //= require turbolinks
 //
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
 //= require_tree .
-
-$(function(){ $(document).foundation(); });
+$(function() {
+  $(document).foundation();
+});
