@@ -2,6 +2,8 @@
 <ul class="off-canvas-list">
 	<li><label>Account</label></li>
     <li><%= link_to "Edit Profile", edit_user_registration_path(current_user) %></li>
-	<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+	<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+	<li><label>Teams</label></li>
+	<li><a href="#">Manage Teams</a></li>
 </ul>
 <% end %>

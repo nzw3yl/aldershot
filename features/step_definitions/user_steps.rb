@@ -47,7 +47,8 @@ end
 
 ### GIVEN ###
 Given /^I am not logged in$/ do
-  visit '/users/sign_out'
+  page.driver.submit :delete, "/users/sign_out", {}   # roger - was visit ##
+  # click_button 'Sign Out'  ## roger was visit #
 end
 
 Given /^I am logged in$/ do
@@ -75,7 +76,7 @@ When /^I sign in with valid credentials$/ do
 end
 
 When /^I sign out$/ do
-  visit '/users/sign_out'
+  visit "/users/sign_out"  ## roger was visit #
 end
 
 When /^I sign up with valid user data$/ do
@@ -122,7 +123,7 @@ When /^I sign in with a wrong password$/ do
 end
 
 When /^I edit my account details$/ do
-  click_link "Edit account"
+  click_link "Edit Profile"  ## roger #
   fill_in "Name", :with => "newname"
   fill_in "user_current_password", :with => @visitor[:password]
   click_button "Update"
@@ -134,15 +135,15 @@ end
 
 ### THEN ###
 Then /^I should be signed in$/ do
-  page.should have_content "Logout"
+  page.should have_content "Sign out"
   page.should_not have_content "Sign up"
   page.should_not have_content "Login"
 end
 
 Then /^I should be signed out$/ do
   page.should have_content "Sign up"
-  page.should have_content "Login"
-  page.should_not have_content "Logout"
+ # page.should have_content "Sign in"
+  page.should_not have_content "Sign out"
 end
 
 Then /^I see an unconfirmed account message$/ do
@@ -150,7 +151,7 @@ Then /^I see an unconfirmed account message$/ do
 end
 
 Then /^I see a successful sign in message$/ do
-  page.should have_content "Signed in successfully."
+  page.should have_content "Account"  ## Roger ##
 end
 
 Then /^I should see a successful sign up message$/ do
@@ -166,11 +167,11 @@ Then /^I should see a missing password message$/ do
 end
 
 Then /^I should see a missing password confirmation message$/ do
-  page.should have_content "Passworddoesn't match confirmation"
+  page.should have_content "Password confirmationdoesn't match Password"
 end
 
 Then /^I should see a mismatched password message$/ do
-  page.should have_content "Passworddoesn't match confirmation"
+  page.should have_content "Password confirmationdoesn't match Password"
 end
 
 Then /^I should see a signed out message$/ do

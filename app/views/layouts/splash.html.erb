@@ -32,6 +32,9 @@
 		<section class="main-section">
             <div class="small-12 small-centered columns">
 	          &nbsp;
+              <header>
+		        <%= render 'layouts/messages' %>
+		      </header>
 	        </div> 
 			<div class="small-8 large-4 small-centered columns panel callout">
 				<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
@@ -45,7 +48,7 @@
 					     <%= f.input :password, :label => false, :placeholder => "********" %>
 					   </div>
 					   <div class="large-4 small-4 columns">
-					     <%= f.button :submit, "Sign In", :class => 'button tiny radius' %>
+					     <%= f.button :submit, "Sign in", :class => 'button tiny radius' %>
 					   </div>
 				   </div>  
 				   <div class="row"> 
@@ -60,7 +63,7 @@
 			</div> 
 			<div class="small-8 large-4 small-centered columns panel callout">
 				<div>
-		          <h3>&nbsp;&nbsp;&nbsp;New here? Sign Up</h3>
+		          <h3>&nbsp;&nbsp;&nbsp;New here? Sign up</h3>
 		        </div>
 				<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
 				  <div class="row"> 
@@ -85,7 +88,7 @@
 				   </div>
 				   <div class="row"> 
 					   <div class="large-6 columns">
-					     <%= f.button :submit, "Sign Up for ...", :class => 'button success tiny radius' %>
+					     <%= f.button :submit, "Sign up", :class => 'button success tiny radius' %>
 					   </div>
 				   </div> 
 				<% end %>				
