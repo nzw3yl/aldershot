@@ -1,0 +1,16 @@
+<ul class="button-group">
+  <li><a href="#" class="button">Priorities</a></li>
+  <li><%= link_to "Blocks", blocks_path, :class => "button secondary" %></li>
+  <li><%= link_to "Stucks", stucks_path, :class => "button secondary" %></li>
+</ul> 
+  <div class="content small-12 medium-6 large-6" id="panel2-1"> 
+    <%= render 'form' %>
+    <div id="priorities">
+    <%= render @priorities %>
+    </div>
+  </div> 
+  
+  <div class="content" id="panel2-3"> 
+    
+  </div> 
+

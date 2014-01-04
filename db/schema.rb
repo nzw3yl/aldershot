@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130928010623) do
+ActiveRecord::Schema.define(version: 20140103170231) do
+
+  create_table "priorities", force: true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.boolean  "high",       default: true
+    t.boolean  "complete",   default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -23,6 +32,17 @@ ActiveRecord::Schema.define(version: 20130928010623) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
+  create_table "stucks", force: true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "owner_id"
+    t.boolean  "complete",   default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "stucks", ["owner_id"], name: "index_stucks_on_owner_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

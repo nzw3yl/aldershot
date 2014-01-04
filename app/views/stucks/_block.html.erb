@@ -1,0 +1,35 @@
+<div class="content"> 
+	<div class="panel callout radius">
+	  	<img class="radius profile"src="images/default_profile.jpg">
+		       <span class="update-text"><%= block_display_content(block) %></span>
+		<div class="row right">
+	        <ul class="inline-list">  
+		      <li><%= link_to unstuck_path(block), :method => :patch, remote: true  do %>
+			        <i class="fi-trophy"></i> Unstuck
+			      <% end %>
+			  </li>
+			  <li><%= link_to root_path do %>
+			        <i class="fi-comment-quotes"></i> Comment
+			      <% end %>
+			  </li>
+			  <li><%= link_to root_path, :data => {:'reveal-id' => "myModal"} do %>
+			        <i class="fi-torso"></i> Reassign
+			      <% end %>
+			  </li>
+		    </ul>
+		  </div>
+	</div> 
+  </div>
+<div id="myModal" class="reveal-modal" data-reveal> 
+  <div class="row">
+    <div class="large-12 columns">
+	<%= simple_form_for(block) do |f| %>
+      <img class="radius profile"src="images/default_profile.jpg"><span class="profile-select-text">
+      <%= User.find_by_id(block.owner_id).try(:name) %></span>
+      <%= f.association :owner, :label => false %>
+      <%= f.button :submit, :class => 'button tiny radius round right' %>
+    <% end %>
+    </div>
+  </div> 
+	<a class="close-reveal-modal">&#215;</a> 
+</div>

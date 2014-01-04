@@ -1,0 +1,17 @@
+
+    <%= simple_form_for @priority, :html => { :class => 'form-horizontal' } do |f| %>
+     <div class="row">
+	    <div class="small-12 columns">
+	      <%= f.input :content, :label => false, :placeholder => "Add Priority" %>
+	      
+	    </div>
+	    <div class="small-6 columns">
+		  <%= f.input :high, :label => " Due Today" %>
+		</div>
+		<div class="small-6 columns">
+		  <%= f.button :submit, :class => 'button tiny radius round right' %>
+		</div>
+	  </div>
+	<% end %>
+
+	

@@ -1,0 +1,29 @@
+<div class="panel callout radius">
+   <a href="#" data-reveal-id="myModal<%= stuck.id%>"><img class="radius profile"src="images/default_profile.jpg"></a>
+     <span class="update-text"><%= stuck_display_content(stuck) %></span>
+   	<div class="row right">
+        <ul class="inline-list">  
+	      <li><%= link_to root_path do %>
+		        <i class="fi-comment-quotes"></i> Comment
+		      <% end %>
+		  </li>
+		  <li><%= link_to root_path do %>
+		        <i class="fi-x"></i> Delete
+		      <% end %>
+		  </li>
+	    </ul>
+	</div>
+</div>
+<div id="myModal<%= stuck.id%>" class="reveal-modal" data-reveal> 
+  <div class="row">
+    <div class="large-12 columns">
+	<%= simple_form_for(stuck) do |f| %>
+      <img class="radius profile"src="images/default_profile.jpg"><span class="profile-select-text">
+      <%= User.find_by_id(stuck.owner_id).try(:name) %></span>
+      <%= f.association :owner, :label => false %>
+      <%= f.button :submit, :class => 'button tiny radius round right' %>
+    <% end %>
+    </div>
+  </div> 
+	<a class="close-reveal-modal">&#215;</a> 
+</div>

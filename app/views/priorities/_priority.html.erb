@@ -1,0 +1,28 @@
+
+<div class="<%= priority_display_class(priority.high) %>">
+  <div class="row">
+	<div class="small-12 columns">
+      <p><%= priority.content %></p>
+    </div>
+  </div>
+  <div class="row right">
+    <ul class="inline-list"> 
+      <li><%= link_to completed_path(priority), :method => :patch, remote: true  do %>
+	        <i class="fi-trophy"></i> Complete
+	      <% end %>
+	  </li>
+	  <li><%= link_to root_path do %>
+	        <i class="fi-comment-quotes"></i> Comment
+	      <% end %>
+	  </li> 
+	  <li> <%= link_to urgency_path(priority), :method => :patch, remote: true do %>
+			  <%= raw(priority_display_link(priority.high)) %>
+			 <% end %>
+	  </li>
+      <li><%= link_to root_path do %>
+	        <i class="fi-x"></i> Delete
+	      <% end %>
+	  </li> 
+    </ul>
+  </div>
+</div>

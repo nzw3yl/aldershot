@@ -1,0 +1,8 @@
+<ul class="button-group">
+  <li><%= link_to "Priorities", priorities_path, :class => "button secondary" %></li>
+  <li><a href="#" class="button">Blocks</a></li>
+  <li><%= link_to "Stucks", stucks_path, :class => "button secondary" %></li>
+</ul>
+<div id="blocks" class="large-6 medium-8 small-12">
+   <%= render partial: 'block', collection: @stucks %>
+</div>
