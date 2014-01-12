@@ -1,11 +1,11 @@
 
-<div class="<%= priority_display_class(priority.high) %>">
+<div class="<%= priority_display_class(priority.high) %> clearfix">
   <div class="row">
-	<div class="small-12 columns">
+	<div class="small-12 columns ">
       <p><%= priority.content %></p>
     </div>
   </div>
-  <div class="row right">
+  <div class="action-bar-<%= priority.high? ? 'high' : 'low' %>-panel right">
     <ul class="inline-list"> 
       <li><%= link_to completed_path(priority), :method => :patch, remote: true  do %>
 	        <i class="fi-trophy"></i> Complete

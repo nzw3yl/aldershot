@@ -1,9 +1,9 @@
 <div class="content"> 
-	<div class="panel callout radius">
+	<div class="prio-high-panel callout radius clearfix">
 	  	<img class="radius profile"src="images/default_profile.jpg">
 		       <span class="update-text"><%= block_display_content(block) %></span>
 		<div class="row right">
-	        <ul class="inline-list">  
+	        <ul class="inline-list action-bar-high-panel">  
 		      <li><%= link_to unstuck_path(block), :method => :patch, remote: true  do %>
 			        <i class="fi-trophy"></i> Unstuck
 			      <% end %>

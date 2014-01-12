@@ -6,10 +6,10 @@
 	      
 	    </div>
 	    <div class="small-6 columns">
-		  <%= f.input :high, :label => " Due Today" %>
+		  <%= f.input_field :high, :inline_label => " Due Today" %>
 		</div>
 		<div class="small-6 columns">
-		  <%= f.button :submit, :class => 'button tiny radius round right' %>
+		  <%= f.button :submit, 'Add Priority', :class => 'button tiny radius round right' %>
 		</div>
 	  </div>
 	<% end %>

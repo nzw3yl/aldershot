@@ -16,8 +16,11 @@ class PrioritiesController < ApplicationController
   def create
     @user = current_user
     @priority = @user.priorities.new(priority_params)
-    @priority.save
-    redirect_to priorities_path, notice: "new priority added"
+    if @priority.save
+      redirect_to priorities_path, notice: "new priority added"
+    else
+      redirect_to action: :index
+    end
   end
   
   def completed
