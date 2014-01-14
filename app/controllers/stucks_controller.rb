@@ -7,8 +7,12 @@ class StucksController < ApplicationController
   def create
     @user = current_user
     @stuck = @user.stucks.new(stuck_params)
-    @stuck.save
-    redirect_to stucks_path, notice: "new stuck added"
+    if @stuck.save
+      track_activity @stuck
+      redirect_to stucks_path, notice: "new stuck added"
+    else
+      render :root_path
+    end
   end
   
   def update

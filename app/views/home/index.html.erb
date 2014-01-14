@@ -13,30 +13,24 @@
   </div>
 </form>
 <dl class="accordion" data-accordion> 
+ <% @activities.each do |activity| %>
   <dd> 
-    <a href="#panel1"><img class="radius profile logimage" src="images/default_profile.jpg">
+    <a href="#panel<%= activity.id %>"><img class="radius profile logimage" src="images/default_profile.jpg">
 	  <div class="clearfix row">
+
 	  	<div class="update-text">
-		  <div class="small-10 columns">
-		    <i class="fi-x"></i> 
-		    Lorem ipsum dolor sit amet, consectetur 
-		    adipisicing elit, sed do eiusmod tempor 
-		    incididunt ut labore et dolore magna aliqua
+		  <div class="small-9 large-10 medium-10 columns">
+		    <%= feed_icon(activity.action).html_safe %> 
+            <%= ActivityPresenter.new(activity, self).render_activity.html_safe %>
 		  </div>
-		  <div class="small-1 columns right">
-			1hr
+		  <div class="small-2 large-1 medium-1 columns right timeago">
+			<%= time_ago(activity.created_at)%>
 		  </div>
 		</div>
-		  <div class="right action-bar-log-panel">
-			  <ul class="inline-list" >
-			    <li><span class="log-link"><i class="fi-star"></i> (5) </span></li>
-			    <li><span class="log-link">click 1</span></li>
-			    <li><span class="log-link">click 1</span></li>
-			  </ul>
-	     </div>
+		 
       </div>
 	</a> 
-	<div id="panel1" class="content"> 
+	<div id="panel<%= activity.id %>" class="content"> 
 	  <div class="row">
 		<div class="small-2 columns">
 		  <img class="radius profile"src="images/default_profile.jpg">
@@ -69,19 +63,5 @@
 	  </div>
 	</div>
   </dd> 
-  <dd> 
-	<a href="#panel2">
-	   <img class="radius profile"src="images/default_profile.jpg">
-	       <span class="update-text"><i class="fi-trophy"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
-	</a>
-	<div id="panel2" class="content"> Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-	</div>
-  </dd> 
-  <dd> 
-	<a href="#panel3"><img class="radius profile"src="images/default_profile.jpg">
-		<span class="update-text"> <i class="fi-info"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
-	</a>
-    <div id="panel3" class="content"> Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	</div>
-  </dd> 
+  <% end %>
 </dl>

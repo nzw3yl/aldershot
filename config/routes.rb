@@ -1,4 +1,6 @@
 Demo4::Application.routes.draw do
+  resources :activities
+
   get "stucks/index"
   root :to => "home#index"
   devise_for :users, :controllers => {:registrations => "registrations"}

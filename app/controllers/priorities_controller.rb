@@ -17,6 +17,7 @@ class PrioritiesController < ApplicationController
     @user = current_user
     @priority = @user.priorities.new(priority_params)
     if @priority.save
+      track_activity @priority
       redirect_to priorities_path, notice: "new priority added"
     else
       redirect_to action: :index
@@ -26,6 +27,7 @@ class PrioritiesController < ApplicationController
   def completed
     @priority = Priority.find(params[:id])
     @priority.update_attribute :complete, true
+    track_activity @priority
     @priorities = Priority.active_by_user(current_user)
     respond_to do |format|
       format.html { redirect_to(priorities_path) }

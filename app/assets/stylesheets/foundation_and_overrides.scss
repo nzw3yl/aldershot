@@ -1059,3 +1059,27 @@ $panel-bg: darken($template-color-light, 5%);
 #flash_alert {
   color: $template-color-bold;
 }
+
+.timeago {
+  font-size: small;
+  color: $template-color-dark;
+}
+
+.feed-icon.fi-flag {
+  font-size: large;
+  color: $template-color-bold;
+}
+
+.feed-icon.fi-x {
+  font-size: large;
+  color: red;
+}
+
+.feed-icon.fi-trophy {
+  font-size: large;
+  color: yellow;
+}
+
+.feed-name {
+  font-weight: bold;
+}

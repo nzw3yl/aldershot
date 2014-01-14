@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
          
   has_many :priorities
   has_many :stucks
+  has_many :activities
 end
